@@ -20,6 +20,7 @@ class PersonalFAB extends StatelessWidget {
             onPressed: () {
               Provider.of<DataProvider>(context, listen: false)
                   .insertNote(title: title, text: text);
+              Navigator.pop(context);
             },
             backgroundColor: Color(0xFF62686E),
             elevation: 10.0,

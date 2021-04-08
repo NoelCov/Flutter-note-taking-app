@@ -35,7 +35,7 @@ class DBHelper {
       CREATE TABLE $table (
       $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
       $columnTitle TEXT NOT NULL,
-      $columnText TEXT NOT NULL
+      $columnText TEXT
       )
       ''');
   }
@@ -70,10 +70,10 @@ class DBHelper {
         .delete(table, where: '$columnTitle = ?', whereArgs: [noteTitle]);
   }
 
-  Future<int> updateNote(Note note) async {
+  Future<int> updateNote(Note newNote, String oldNoteName) async {
     Database db = await instance.database;
-    final result = await db.update(table, note.toMap(),
-        where: '$columnTitle = ?', whereArgs: [note.title]);
+    final result = await db.update(table, newNote.toMap(),
+        where: '$columnTitle = ?', whereArgs: [oldNoteName]);
     return result;
   }
 

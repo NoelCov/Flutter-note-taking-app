@@ -6,6 +6,7 @@ class Note {
   String title;
   String text;
 
+
   Map<String, dynamic> toMap() {
     final map = Map<String, dynamic>();
 

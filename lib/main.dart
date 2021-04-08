@@ -3,6 +3,7 @@ import 'package:note_taking_app/Screens/home_screen.dart';
 import 'package:note_taking_app/Screens/add_note.dart';
 import 'package:note_taking_app/data_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:note_taking_app/Screens/view_note.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => HomeScreen(),
           '/add_note': (context) => AddNote(),
+          '/view_note': (context) => ViewNote(),
         },
       ),
     );
